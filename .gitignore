@@ -1,0 +1,10 @@
+# Ignore PlatformIO build files
+**/.pio/
+**/.vscode/
+**/.DS_Store
+*.bin
+*.elf
+*.map
+*.pyc
+__pycache__/
+
