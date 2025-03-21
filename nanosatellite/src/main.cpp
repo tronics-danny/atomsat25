@@ -1,18 +1,27 @@
 #include <Arduino.h>
+//#include "dht_sensor.h"
+//#include "oled_display.h"
+#include "sat_defs.h"
+#include "sat_lora.h"
 
-// put function declarations here:
-int myFunction(int, int);
+
+
 
 void setup() {
   // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+
+  Serial.begin(SERIAL_BAUD_RATE);
+  while (!Serial);
+
+  Serial.println("Starting Nanosat LoRa Test...");
+  //initialize lora module communication
+  initLoRa();
+  
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
+  receivePkt();
+
 }
 
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
-}
