@@ -9,9 +9,13 @@
 #define irqPin 2
 
 //DHT 11 pin
-#define dhtPin 13
+#define DHTPIN 13 //Digital pin connected to the DHT sensor
+#define DHTTYPE DHT11   // DHT 11
 
-//Serial Communication definitions
+//Debugging LED
+#define ledPin 12
+
+//Serial Communication definition
 #define SERIAL_BAUD_RATE 9600
 
 #endif
