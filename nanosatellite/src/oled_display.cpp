@@ -25,7 +25,7 @@ void initOLED(){
 }
 
 //takes an int parameter for the line and a float param for the temp val to output
-void displayOLED(int line1, float temp){
+void displayTempReadingOLED(int line1, float temp){
   u8g2.clearBuffer();
   u8g2.setFont(u8g2_font_7x13_tf);
 
@@ -40,5 +40,17 @@ void displayOLED(int line1, float temp){
   }
 
   u8g2.sendBuffer();
+}
+
+
+// This is a function to be called whenever something else is to be displayed on the oled
+// It takes two variables, the line at which the message is to be displayed at and the message to be displayed
+void displayOnOLED(int line, String msg){
+  u8g2.clearBuffer();                       //Clear the screen
+  u8g2.setFont(u8g2_font_7x13_tf);          //Set the font to be used
+
+  u8g2.drawStr(2, line, msg.c_str());       //Take the message and store in memory
+
+  u8g2.sendBuffer();                        //Forward the message to the screen
 }
 

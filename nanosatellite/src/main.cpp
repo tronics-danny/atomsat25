@@ -1,4 +1,6 @@
 #include <Arduino.h>
+#include <LoRa.h>  
+#include <SPI.h>
 #include "sat_defs.h"
 #include "sat_lora.h"
 #include "dht_sensor.h"
@@ -27,6 +29,14 @@ void setup() {
   //initialize lora module communication
   initALL();
   setPinModes();
+
+  // Set Receive Call-back function
+  LoRa.onReceive(onReceive);
+
+  // Place LoRa in Receive Mode
+  LoRa.receive();
+    
+  Serial.println("LoRa init succeeded.");
   
 }
 
@@ -43,7 +53,7 @@ void loop() {
   
   if (isnan(temp_val)) {
     Serial.println(F("Failed to read from DHT sensor!"));
-    displayOLED(34, NAN);  // Display error message on OLED
+    displayTempReadingOLED(34, NAN);  // Display error message on OLED
     blinkDebugLED(2);
     return;
   }
@@ -51,7 +61,7 @@ void loop() {
   Serial.print("Temp: ");
   Serial.println(String(temp_val,1));
 
-  displayOLED(10, temp_val);  // Now safe to display
+  displayTempReadingOLED(10, temp_val);  // Now safe to display
 }
 
 

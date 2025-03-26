@@ -8,8 +8,9 @@ Parameter definitions in the funtion:
     2nd int - value to be printed on the OLED
 */
 
-void displayOLED(int, float);
+void displayTempReadingOLED(int, float);
 void initOLED();
+void displayOnOLED(int line, String msg);
 
 
 
