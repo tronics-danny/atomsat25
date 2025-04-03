@@ -35,3 +35,19 @@ Read more about using header files in official GCC documentation:
 * Computed Includes
 
 https://gcc.gnu.org/onlinedocs/cpp/Header-Files.html
+
+/ground_station
+  ├── include/
+  │   ├── config.h
+  │   ├── lora_handler.h
+  │   ├── keypad_handler.h
+  │   ├── lcd_handler.h
+  │   └── command_handler.h
+  ├── lib/
+  ├── src/
+  │   ├── main.cpp
+  │   ├── lora_handler.cpp
+  │   ├── keypad_handler.cpp
+  │   ├── lcd_handler.cpp
+  │   └── command_handler.cpp
+  └── platformio.ini

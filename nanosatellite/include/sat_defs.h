@@ -1,5 +1,6 @@
 #ifndef SAT_DEFS_H
 #define SAT_DEFS_H
+#include <Arduino.h>
 
 // Pin definitions for all components connected to the esp32 in the nanosat
 
@@ -16,6 +17,6 @@
 #define ledPin 12
 
 //Serial Communication definition
-#define SERIAL_BAUD_RATE 9600
+#define SERIAL_BAUD_RATE 115200
 
 #endif
