@@ -5,7 +5,7 @@ This is a dual-system IoT project consisting of:
 - 📡 `nanosatellite/` — firmware for the satellite (ESP32-based)
 - 🛰️ `ground_station/` — firmware for the ground station (ESP32-based)
 
-# This is the project structure:
+## This is the project structure:
 
 atomSat25/
 ├── ground_station/
